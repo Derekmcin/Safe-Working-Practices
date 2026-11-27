@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1422">
+<title>Safe Lift: Outcome 2 Quiz · F5JL 11 Safe Working Practices</title>
+<meta name="description" content="Self-marking Outcome 2 quiz for F5JL 11 Safe Working Practices, New College Lanarkshire.">
+<style>:root{--bg:#0b1422;--panel:#14223a;--panel2:#1b2d4b;--line:#34507a;--text:#eef3fa;--muted:#b3c2d6;--green:#2ecc71;--red:#ff6b6b;--amber:#ffb020;--blue:#5aa9ff;}
+*{box-sizing:border-box}
+html{font-size:clamp(16px,0.55vw + 13px,21px);-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 50% -200px,#1d3358,var(--bg));background-color:var(--bg);color:var(--text);font-family:Calibri,"Segoe UI",Arial,sans-serif;line-height:1.4;min-height:100vh;overflow-wrap:break-word}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:12px 14px 40px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0 10px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:700;letter-spacing:.04em;min-height:44px}
+.brand svg{width:30px;height:30px;color:var(--green)}
+.brand small{display:block;font-weight:400;color:var(--muted);letter-spacing:0;font-size:.75rem}
+.iconbtn{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;padding:6px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:.85rem}
+.iconbtn svg{width:20px;height:20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+h1{font-size:2rem;line-height:1.05;margin:4px 0 6px;letter-spacing:.02em}
+h1 .g{color:var(--green)}
+h2{font-size:1.2rem;margin:0 0 10px}
+h3{font-size:1rem;margin:4px 0 8px;color:var(--muted)}
+.muted{color:var(--muted)}
+.hero{display:flex;gap:14px;align-items:center}
+.hero .door{flex:0 0 96px}
+label{font-weight:700;display:block;margin-bottom:6px}
+input[type=text],select{width:100%;min-height:48px;border-radius:12px;border:2px solid var(--line);background:#0e1a2d;padding:8px 12px;font-size:1.05rem}
+.err{color:var(--red);margin:6px 0 0;font-weight:700}
+.modes{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.modes{grid-template-columns:repeat(3,1fr)}}
+.mode{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;min-height:44px;padding:14px;border-radius:16px;border:2px solid var(--line);background:linear-gradient(160deg,var(--panel2),#13223a);cursor:pointer;transition:transform .15s,border-color .15s}
+.mode:hover,.mode:focus-visible{border-color:var(--amber);transform:translateY(-2px)}
+.mode b{font-size:1.15rem}.mode .mi{display:flex;align-items:center;gap:8px}
+.mode .mi svg{width:26px;height:26px}
+.mode span.d{color:var(--muted);font-size:.92rem}
+.mode.quick .mi svg{color:var(--amber)}.mode.mission .mi svg{color:var(--green)}.mode.practice .mi svg{color:var(--blue)}
+.practice-pick{margin-top:8px}
+.boards{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:600px){.boards{grid-template-columns:1fr 1fr}}
+.board{list-style:none;margin:0;padding:0}
+.board li{display:grid;grid-template-columns:28px 1fr auto auto;gap:8px;align-items:center;padding:6px 8px;border-radius:8px;background:#0f1c30;margin-bottom:4px}
+.board .pos{font-weight:700;color:var(--amber)}.board .bs{font-weight:700}.board .bp{color:var(--muted)}
+.board .bn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* HUD */
+.hud{position:sticky;top:0;z-index:5;background:rgba(11,20,34,.96);border-bottom:1px solid var(--line);margin:0 -14px;padding:8px 14px;backdrop-filter:blur(4px)}
+.hudrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hudrow .grow{flex:1;min-width:0;font-size:.85rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:var(--panel2);font-weight:700;min-height:32px}
+.stat svg{width:18px;height:18px}
+#hudStreak svg{color:#ff8a3d}
+.score b{color:var(--amber)}
+#hudShields{display:inline-flex;gap:2px}#hudShields .sh svg{width:20px;height:20px;color:#3b4c66}#hudShields .sh.on svg{color:var(--blue)}
+.prog{height:8px;background:#22324d;border-radius:99px;overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--blue));width:0;transition:width .4s}
+.progtext{font-size:.75rem;color:var(--muted);margin-top:2px}
+#quitBtn{min-height:44px;font-size:.8rem;padding:4px 10px}
+.timer{display:flex;align-items:center;gap:8px;margin:10px 0 0}
+.timer .tb{flex:1;height:12px;background:#22324d;border-radius:99px;overflow:hidden}
+.timer .tb i{display:block;height:100%;background:var(--amber);width:100%}
+.timer .tb i.low{background:var(--red)}
+#timerText{font-weight:700;min-width:3ch;text-align:right}
+/* door */
+.stage{display:flex;align-items:center;gap:12px;margin:10px 0 0}
+.door{width:72px;flex:0 0 72px}
+.doorsvg{width:100%;height:auto;display:block}
+.doorsvg .led{fill:var(--amber)}
+.doorsvg.open .led{fill:#2ef07a}.doorsvg.denied .led{fill:#ff3b3b}
+.doorsvg .leaf{transform-origin:22px 50%;transition:transform .5s ease}
+.doorsvg.open .leaf{transform:scaleX(.35)}
+.door.denied.anim{animation:shake .4s}
+.door.open.anim .led,.door.denied.anim .led{animation:blink .5s 2}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes blink{50%{opacity:.25}}
+.qmeta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.chip{display:inline-block;font-size:.75rem;padding:3px 9px;border-radius:99px;background:#22324d;color:var(--muted)}
+.chip.type{background:#2b2350;color:#d8ccff}
+.scen-tag{display:inline-block;background:var(--amber);color:#1a1200;font-weight:700;font-size:.75rem;padding:3px 10px;border-radius:6px;margin-bottom:6px;letter-spacing:.08em}
+.qtext{font-size:1.2rem;line-height:1.3;margin:4px 0 12px}
+.qtext:focus{outline:none}
+.hint{color:var(--muted);font-size:.9rem;margin:0 0 8px}
+.opts{display:grid;gap:10px}
+.opts.tf{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:10px;width:100%;min-height:52px;text-align:left;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:var(--panel2);cursor:pointer;font-size:1rem}
+.opts.tf .opt{justify-content:center;font-size:1.15rem;font-weight:700;min-height:64px}
+.opt:hover:not(:disabled){border-color:var(--amber)}
+.opt .key{flex:0 0 30px;height:30px;border-radius:8px;background:#0e1a2d;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--amber)}
+.opt.multi .tick{flex:0 0 26px;height:26px;border-radius:6px;border:2px solid var(--muted)}
+.opt.multi.on{border-color:var(--amber);background:#2d3a28}
+.opt.multi.on .tick{background:var(--amber);border-color:var(--amber);box-shadow:inset 0 0 0 4px #2d3a28}
+.opt:disabled{cursor:default}
+.opt.right,.def.right,.oitem.right,.hsb.right{border-color:var(--green)!important;background:#12432c!important}
+.opt.wrong,.def.wrong,.oitem.wrong,.hsb.wrong{border-color:var(--red)!important;background:#4a1a22!important}
+.opt.missed{border-style:dashed!important;border-color:var(--green)!important}
+.opt.right::after{content:"✓";margin-left:auto;color:var(--green);font-weight:700;font-size:1.2rem}
+.opt.wrong::after{content:"✗";margin-left:auto;color:var(--red);font-weight:700;font-size:1.2rem}
+.opt.missed::after{content:"missed";margin-left:auto;color:var(--green);font-size:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:10px 18px;border-radius:14px;border:2px solid var(--line);background:var(--panel2);cursor:pointer;font-weight:700;font-size:1rem}
+.btn.primary{background:var(--green);border-color:var(--green);color:#04210f}
+.btn.primary:disabled{background:#2a3a52;border-color:#2a3a52;color:#8798ae;cursor:not-allowed}
+.btn.ghost{background:transparent}
+.btn.small{min-height:44px;font-size:.85rem;margin-top:10px}
+.check{width:100%;margin-top:12px}
+.row{display:flex;gap:10px;margin-top:12px}.row .btn{flex:1}.row.wrap{flex-wrap:wrap}
+/* match */
+.match{display:grid;gap:12px}
+@media(min-width:700px){.match{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start}}
+.terms{display:flex;flex-wrap:wrap;gap:8px}
+@media(min-width:700px){.terms{flex-direction:column}}
+.term{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:8px 12px;border-radius:12px;border:2px solid var(--line);background:#0e1a2d;cursor:pointer;font-weight:700;text-align:left}
+.term .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--muted);flex:0 0 14px}
+.term.paired .dot{background:var(--pc);border-color:var(--pc)}
+.term.paired{opacity:.75}
+.term.sel{border-color:var(--amber);background:#3a2e10;opacity:1;box-shadow:0 0 0 3px rgba(255,176,32,.3)}
+.defs{display:grid;gap:8px}
+.def{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;min-height:52px;text-align:left;padding:10px 12px;border-radius:12px;border:2px solid var(--line);background:var(--panel2);cursor:pointer}
+.def.paired{border-color:var(--pc)}
+.def .tag:empty{display:none}
+.def .tag{font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--pc);color:#0b1422}
+.def .res:empty{display:none}.def .res{font-weight:700;font-size:.85rem}
+.def.right .res{color:var(--green)}.def.wrong .res{color:#ffb3b3}
+/* order */
+.order{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.oitem{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 10px;border-radius:12px;border:2px solid var(--line);background:var(--panel2);flex-wrap:wrap}
+.oitem.moved{border-color:var(--amber)}
+.onum{flex:0 0 30px;height:30px;border-radius:50%;background:#0e1a2d;color:var(--amber);font-weight:700;display:flex;align-items:center;justify-content:center}
+.otext{flex:1;min-width:0}
+.obtns{display:flex;gap:6px}
+.mv{width:44px;height:44px;border-radius:10px;border:2px solid var(--line);background:#0e1a2d;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mv svg{width:22px;height:22px}.mv:disabled{opacity:.3;cursor:default}
+.ores{flex-basis:100%;font-size:.85rem;color:#ffb3b3;padding-left:40px}
+/* hotspot */
+.diagram{margin:0}
+.diagram svg{width:100%;height:auto;display:block;border-radius:12px;max-height:60vh}
+.diagram figcaption{font-size:.8rem;color:var(--muted);margin-top:4px;text-align:center}
+.hs{cursor:pointer}
+.hs .hit{fill:rgba(255,176,32,.06);stroke:rgba(255,176,32,.55);stroke-width:2;stroke-dasharray:6 4}
+.hs:hover .hit,.hs:focus .hit{fill:rgba(255,176,32,.22);stroke:var(--amber);stroke-dasharray:none}
+.hs:focus{outline:none}
+.hs .badge circle{fill:var(--amber)}.hs .badge text{font-weight:700;font-size:18px;fill:#1a1200;font-family:Calibri,"Segoe UI",Arial,sans-serif}
+.hs .orgbox{fill:#2a3d55;stroke:#c4ccd6;stroke-width:2}
+.hs .rev{display:none;font-size:13px;font-weight:700;fill:#fff;paint-order:stroke;stroke:#0b1422;stroke-width:3px;font-family:Calibri,"Segoe UI",Arial,sans-serif}
+.revealed .hs .rev{display:inline}
+.hs.right .hit{fill:rgba(46,204,113,.35);stroke:var(--green);stroke-dasharray:none;stroke-width:4}
+.hs.wrong .hit{fill:rgba(255,107,107,.35);stroke:var(--red);stroke-dasharray:none;stroke-width:4}
+.hs.key .keycap{fill:#0e1a2d;stroke:#8fa7c4;stroke-width:2}
+.hs.key .keytxt{font-size:30px;font-weight:700;fill:#eef3fa;font-family:Calibri,"Segoe UI",Arial,sans-serif}
+.hs.key:hover .keycap,.hs.key:focus .keycap{stroke:var(--amber);stroke-width:4}
+.hs.key.right .keycap{fill:#12432c;stroke:var(--green);stroke-width:4}
+.hs.key.wrong .keycap{fill:#4a1a22;stroke:var(--red);stroke-width:4}
+.diagram svg:has(.keycap){max-width:280px;margin:0 auto}
+.hsbtns{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin-top:10px}
+.hsb{min-height:48px;border-radius:12px;border:2px solid var(--line);background:var(--panel2);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px}
+.hsb b{font-size:1.1rem;color:var(--amber)}
+.hsb .hsn:empty{display:none}.hsb .hsn{font-size:.7rem;line-height:1.1;text-align:center}
+.hsbtns:has(.hsn:not(:empty)){grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+/* feedback */
+.feedback{margin-top:14px;border-radius:16px;padding:14px;border:2px solid}
+.feedback.good{background:#0f3a25;border-color:var(--green)}
+.feedback.bad{background:#3c141b;border-color:var(--red)}
+.feedback.pop{animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
+.stamp{display:inline-block;font-weight:800;letter-spacing:.12em;font-size:1.15rem;padding:4px 12px;border:3px solid;border-radius:8px;transform:rotate(-2deg)}
+.good .stamp{color:#7dffb0}.bad .stamp{color:#ffb3b3}
+.pts{font-weight:700;color:var(--amber);margin-top:8px}.pts small{color:var(--muted);font-weight:400;margin-left:4px}
+.corr{margin-top:8px}
+.expl{margin:8px 0 12px}
+.next{width:100%}
+/* round */
+.roundbox{text-align:center}
+.bigdoor{width:120px;margin:0 auto}
+.stars{display:flex;justify-content:center;gap:6px;margin:6px 0}
+.stars svg{width:40px;height:40px;color:#3b4c66}.stars .on svg{color:#ffd36b}
+.rtopic{font-size:1.1rem}
+/* end */
+.resultcard{background:linear-gradient(160deg,#1b2d4b,#0f1c30);border:2px solid var(--amber)}
+.rc-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.rc-unit{font-size:.75rem;color:var(--muted);letter-spacing:.05em}
+.rc-name{font-size:1.6rem;font-weight:800}
+.rc-meta{font-size:.85rem;color:var(--muted)}
+.rc-rank{font-size:1.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:4px 0 8px}
+.rc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+.rc-stats div{background:#0e1a2d;border-radius:10px;padding:6px 2px}
+.rc-stats b{display:block;font-size:1.25rem}.rc-stats span{font-size:.7rem;color:var(--muted)}
+.rc-topics{display:grid;gap:4px;margin-top:10px}
+.rct{display:grid;grid-template-columns:minmax(0,7.5rem) 1fr 3rem;gap:8px;align-items:center;font-size:.85rem}
+.rct span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rct b{text-align:right}
+.bar{display:block;height:10px;border-radius:99px;background:#22324d;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green)}
+.rc-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.bdg{display:inline-flex;align-items:center;gap:4px;background:#3a2e10;color:#ffd36b;padding:3px 10px;border-radius:99px;font-size:.8rem;font-weight:700}
+.bdg svg{width:14px;height:14px}
+.rc-foot{margin-top:10px;font-size:.75rem;color:var(--muted);text-align:center}
+.rankmsg{font-size:1.05rem}
+.breakdown{display:grid;gap:10px}
+.bd{padding:10px;border-radius:12px;background:#0f1c30;border:1px solid var(--line)}
+.bd.weak{border-color:var(--red)}
+.bdh{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.bd .bar i{background:var(--green)}.bd.weak .bar i{background:var(--red)}
+.bd .rev{font-size:.85rem;color:#ffc9c9;margin-top:6px}.bd .okmsg{font-size:.85rem;color:var(--green);margin-top:6px}
+.rv{border-top:1px solid var(--line);padding:10px 0}
+.rv:first-of-type{border-top:0}
+.rvq{font-weight:700;margin-bottom:4px}
+.rvy{color:#ffc9c9}.rvc{color:#a8f5c6}.rvx{color:var(--muted);font-size:.92rem;margin-top:4px}
+footer.foot{font-size:.75rem;color:var(--muted);text-align:center;margin-top:24px}
+@media(min-width:1000px){.wrap{max-width:900px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+[hidden]{display:none!important}
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
+.diagram svg{max-width:560px;margin:0 auto}
+.stage .door{width:52px;flex:0 0 52px}
+@media(max-width:520px){.obtns{flex-direction:column}.oitem{padding:6px 6px 6px 8px;gap:8px}}
+/* ---- v2 clarity additions ---- */
+.hbtns{display:flex;gap:6px}
+.iconbtn.help b{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--amber);color:#1a1200;align-items:center;justify-content:center;font-size:.9rem}
+@media(max-width:420px){.iconbtn span{display:none}.iconbtn.help span,.iconbtn#soundBtn span{display:none}}
+.mode{cursor:default;transform:none!important}
+.mode:hover{border-color:var(--line)}
+.mode h3{margin:0;color:var(--text);font-size:1.15rem}
+.mode p.d{margin:2px 0;color:var(--muted);font-size:.92rem}
+.mode .startbtn{width:100%;margin-top:8px}
+.mode label.small{font-size:.85rem;margin:8px 0 4px;color:var(--text)}
+.mode select{min-height:48px}
+.pointsline{font-size:.9rem;margin:10px 2px}
+.howto{background:#2e2608;border:2px solid var(--amber);color:#ffe7a8;border-radius:12px;padding:8px 12px;margin:0 0 12px;font-size:.95rem}
+.howto b{color:var(--amber)}
+.tfpre{color:var(--amber)}
+.checkhint{margin:10px 0 0;font-size:.9rem;color:#ffc9c9;font-weight:700}
+.checkhint.ready{color:#a8f5c6}
+.selnow{margin:10px 0 0;font-size:.95rem;color:#ffe7a8;min-height:1.4em}
+.colhead{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.match>div>.colhead{margin-top:2px}
+.def .tag{white-space:normal}
+.endlab{font-size:.85rem;font-weight:700;color:var(--amber);margin:4px 0}
+.endlab.bot{margin-top:6px}
+.ores.ok{color:#a8f5c6}
+.fbhead{margin:8px 0 2px;font-weight:700}
+.detwrap{margin-top:8px}
+.det{margin:4px 0 0;padding-left:0;list-style:none;display:grid;gap:4px}
+.det li{padding:6px 8px;border-radius:8px;background:rgba(0,0,0,.25);font-size:.92rem}
+.det li.ok{border-left:4px solid var(--green)}.det li.no{border-left:4px solid var(--red)}.det li.miss{border-left:4px dashed var(--green)}
+.detp{margin:4px 0 0}
+.corrlist{margin:4px 0 0;padding-left:1.4em}
+.corrlist li{margin:2px 0}
+.expl b{color:var(--text)}
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(5,10,18,.82);display:flex;align-items:flex-start;justify-content:center;padding:16px 12px;overflow-y:auto}
+.dialog{background:var(--panel);border:2px solid var(--amber);border-radius:18px;max-width:620px;width:100%;padding:18px 16px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.dialog h2{font-size:1.4rem}
+.steps{padding-left:1.3em;margin:0 0 10px}.steps li{margin:6px 0}
+.legend{background:#0f1c30;border-radius:12px;padding:8px 12px;font-size:.92rem;margin-bottom:12px}
+.legend p{margin:6px 0}
+.dialog .btn{width:100%}
+.stage{margin:6px 0 0}.stage .door{width:40px;flex:0 0 40px}
+.howto{font-size:.92rem;padding:7px 11px}
+button,.hs{-webkit-tap-highlight-color:transparent}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+<header class="top">
+  <a href="#" class="brand" id="homeLink" aria-label="Safe Lift quiz home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M3 8v8l9 4V12M21 8v8l-9 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+    <span>SAFE LIFT<small>F5JL 11 · Outcome 2</small></span></a>
+  <span class="hbtns"><button type="button" class="iconbtn help" id="helpBtn" aria-label="How to play" aria-haspopup="dialog"><b aria-hidden="true">?</b><span>How to play</span></button>
+  <button type="button" class="iconbtn" id="soundBtn" aria-pressed="false" aria-label="Sound effects"></button></span>
+</header>
+<div id="live" class="sr" aria-live="polite"></div>
+<div class="overlay" id="howto" hidden>
+ <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="howtoH">
+  <h2 id="howtoH" tabindex="-1">How to play</h2>
+  <ol class="steps">
+   <li><b>Type your first name</b> and pick a mode: Quick Fire, Full Mission or Practice.</li>
+   <li><b>Read the question.</b> The yellow <b>How to answer</b> line under each question tells you exactly what to tap.</li>
+   <li><b>One-tap questions</b> (multiple choice, true or false, diagram) are marked as soon as you tap. <b>Select-all, matching and ordering</b> questions are marked when you tap <b>Check</b>.</li>
+   <li><b>Green SAFE LIFT</b> means right. <b>Red UNSAFE MOVE</b> means wrong. Either way you see the correct answer and why. Tap <b>Next</b> to carry on.</li>
+   <li><b>At the end</b> you get your rank (Visitor, Helper, Trained or Safe Lifter), the topics to revise, and a results card to screenshot for your lecturer.</li>
+  </ol>
+  <div class="legend">
+   <p><b>Points:</b> 100 per right answer. <b>Streak:</b> +10 bonus for each answer in a row (up to +50). <b>Quick Fire:</b> up to +50 extra for answering fast.</p>
+   <p><b>Full Mission:</b> 3 or more right out of 5 unlocks a door (1 to 3 stars). Shields protect your streak from a wrong answer.</p>
+   <p class="muted">The timer pauses while this box is open. Open it again any time with the <b>?</b> button at the top.</p>
+  </div>
+  <button type="button" class="btn primary" id="howtoClose">Got it, let's play</button>
+ </div>
+</div>
+
+
+<main>
+<section class="screen" id="home" hidden>
+  <div class="card">
+    <div class="hero"><div class="door" id="heroDoor" aria-hidden="true"></div>
+      <div><h1 id="homeHH">Can you keep it a <span class="g">SAFE LIFT?</span></h1>
+      <p class="muted" style="margin:0">Outcome 2: manual handling (lifting, pushing, pulling and stacking) and safe working at height. <span id="qcount"></span> questions. Every right answer unlocks a door.</p></div></div>
+  </div>
+  <div class="card">
+    <label for="name">Your first name</label>
+    <input type="text" id="name" maxlength="20" autocomplete="given-name" autocapitalize="words" spellcheck="false" placeholder="e.g. Jamie" aria-describedby="nameNote">
+    <p id="nameNote" class="muted" style="font-size:.85rem;margin:6px 0 0">First name only. It stays on this device and is only used for your results card and the high-score table.</p>
+    <p id="nameErr" class="err" hidden>Pop your first name in to start.</p>
+  </div>
+  <h2 id="homeH" tabindex="-1">Choose your mode</h2>
+  <div class="modes">
+    <div class="mode quick"><div class="mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg><h3>Quick Fire</h3></div>
+      <p class="d">10 random questions against the clock (20 to 45 seconds each). Faster correct answers earn up to 50 bonus points. If the timer runs out, it counts as wrong.</p>
+      <button type="button" class="btn primary startbtn" data-mode="quick">Start Quick Fire</button></div>
+    <div class="mode mission"><div class="mi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="15" cy="12" r="1.6" fill="currentColor"/></svg><h3>Full Mission</h3></div>
+      <p class="d">20 questions: 4 doors (one per topic), 5 questions each. Get 3 or more right to unlock a door and earn up to 3 stars. No timer.</p>
+      <p class="d">You have 3 shields. A shield takes the hit for a wrong answer so your streak is not lost. You win a shield back for every 5 right in a row.</p>
+      <button type="button" class="btn primary startbtn" data-mode="mission">Start Full Mission</button></div>
+    <div class="mode practice"><div class="mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-5a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h6z" fill="none" stroke="currentColor" stroke-width="2"/></svg><h3>Practice</h3></div>
+      <p class="d">No timer, no pressure. Choose one topic or all of them, and see the answer and explanation after each question. Tap End whenever you want to stop.</p>
+      <label for="topicSel" class="small">Choose a topic to practise</label><select id="topicSel"></select>
+      <button type="button" class="btn primary startbtn" data-mode="practice">Start Practice</button></div>
+  </div>
+  <p class="muted pointsline"><b>Points:</b> 100 for each right answer, plus a streak bonus of +10 for every answer in a row (up to +50). Your rank at the end depends on your %.</p>
+  <div class="card"><h2>High scores <small class="muted" style="font-weight:400">(this device only)</small></h2><div id="boards"></div></div>
+</section>
+
+<section class="screen" id="play" hidden>
+  <div class="hud">
+    <div class="hudrow"><span class="grow" id="hudMode"></span>
+      <span class="stat score" aria-label="Score"><b id="hudScore">0</b>&nbsp;pts</span>
+      <span class="stat" id="hudStreak"></span><span class="stat" id="hudShields"></span>
+      <button type="button" class="iconbtn" id="quitBtn">End</button></div>
+    <div class="prog" id="prog" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progFill"></i></div>
+    <div class="progtext" id="progText"></div>
+    <div class="timer" id="timer" hidden><span class="tb" aria-hidden="true"><i id="timerFill"></i></span><span id="timerText" aria-label="Seconds left"></span></div>
+  </div>
+  <div class="stage"><div class="door" id="door" aria-hidden="true"></div><div class="muted" style="font-size:.85rem">Answer correctly to unlock the door.</div></div>
+  <div class="card" id="qbox"></div>
+  <div id="feedback" class="feedback" hidden role="status"></div>
+</section>
+
+<section class="screen" id="round" hidden><div class="card roundbox" id="roundBox"></div></section>
+
+<section class="screen" id="end" hidden><h1 id="endH" tabindex="-1" style="font-size:1.6rem">Mission debrief</h1><div id="endBox"></div></section>
+</main>
+<footer class="foot">New College Lanarkshire · F5JL 11 Safe Working Practices (SCQF level 5), Outcome 2. This is a revision quiz, not the formal SQA assessment. Works offline. Nothing leaves this device.</footer>
+</div>
+<script>
+/* F5JL 11 Safe Working Practices, Outcome 2: Safe Lift. mc: FIRST option is correct (shuffled at runtime). multi: a = indices of correct options. order: items in the correct order; ends = labels for top/bottom. match: [term, description] pairs. */
+const QUIZ = {
+ "ls": "swp2_",
+ "label": "Outcome 2",
+ "unit": "F5JL 11 · Safe Working Practices · Outcome 2",
+ "okStamp": "SAFE LIFT",
+ "badStamp": "UNSAFE MOVE",
+ "perfectMsg": "Every question correct. That was a safe lift.",
+ "ranks": [
+  {
+   "min": 90,
+   "name": "Safe Lifter",
+   "col": "#ffd36b",
+   "msg": "Outstanding. You have the techniques for a safe lift and for safer work at height."
+  },
+  {
+   "min": 70,
+   "name": "Trained",
+   "col": "#5aa9ff",
+   "msg": "Strong work. A little revision and you will hold the top rank."
+  },
+  {
+   "min": 50,
+   "name": "Helper",
+   "col": "#2ecc71",
+   "msg": "Good start. Revise the topics flagged below and try again."
+  },
+  {
+   "min": 0,
+   "name": "Visitor",
+   "col": "#c4ccd6",
+   "msg": "Signed in as a visitor. Work through the flagged notes, then retry."
+  }
+ ]
+};
+const TOPICS = {
+ "dangers": {
+  "name": "Dangers of Manual Handling",
+  "short": "MH dangers",
+  "notes": "Outcome 2 (a): dangers associated with manual handling operations",
+  "door": 1
+ },
+ "methods": {
+  "name": "Safe Lifting, Pushing and Pulling",
+  "short": "MH controls",
+  "notes": "Outcome 2 (b) and (c): control methods and the techniques for lifting and stacking",
+  "door": 2
+ },
+ "heightdanger": {
+  "name": "Dangers of Working at Height",
+  "short": "WAH dangers",
+  "notes": "Outcome 2 (d): dangers associated with working at height",
+  "door": 3
+ },
+ "heightcontrol": {
+  "name": "Safe Working at Height",
+  "short": "WAH controls",
+  "notes": "Outcome 2 (e) and (f): control techniques for safe working at height",
+  "door": 4
+ },
+};
+const BANK = [
+{"id":"d01","t":"dangers","type":"mc","q":"What is the main type of injury linked to poor manual handling?","o":["Musculoskeletal disorders, such as injuries to the back, shoulders, neck or joints","Sunburn","Hearing loss from noise only","Colour blindness"],"x":"Manual handling is a common cause of musculoskeletal disorders (MSDs): injuries and pain affecting the back, shoulders, neck, limbs and joints. Other injuries, such as crush injuries and cuts, can also happen."},
+{"id":"d02","t":"dangers","type":"multi","q":"Which of these are dangers associated with manual handling? Select ALL that apply (4 correct answers).","o":["Back, shoulder or neck injury","Crushed hands or feet if a load is dropped or trapped","A slip or fall while carrying","Cuts or punctures from sharp or damaged packaging","Improved fitness, so no assessment is needed","Better eyesight after a heavy lift"],"a":[0,1,2,3],"x":"Manual handling can cause musculoskeletal injuries, crush injuries, cuts, and slips or falls, especially on stairs or uneven ground. It is not a substitute for fitness training, and it still needs a risk assessment."},
+{"id":"d03","t":"dangers","type":"tf","a":false,"q":"A compact, heavy control panel is always safer to lift than a light but large, awkward box.","x":"False. Weight matters, but so do the size, shape, grip, how far the load is from your body, and whether you can see where you are going. A light but bulky load can still be high risk."},
+{"id":"d04","t":"dangers","type":"match","q":"HSE uses the letters TILE when assessing a manual handling task. Match each letter to what it stands for.","p":[["T — Task","What you have to do: distances, twisting, stooping, repetition, team work"],["I — Individual","Who is doing it: strength, training, health, pregnancy, experience"],["L — Load","What is being moved: weight, size, shape, grip, stability, sharpness"],["E — Environment","Where it happens: space, floors, lighting, temperature, steps, obstacles"]],"x":"TILE (Task, Individual, Load, Environment) is the HSE prompt in L23, the guidance on the Manual Handling Operations Regulations 1992. Use all four headings, not just the weight of the load."},
+{"id":"d05","t":"dangers","type":"mc","s":true,"q":"You are asked to carry a heavy 19-inch equipment rack up a narrow staircase, on your own. What is a key danger?","o":["You may injure your back, lose your balance or fall, and you may not be able to see the steps","The rack will become lighter as you go up the stairs","Staircases cancel out manual handling risk","There is no danger if you have done it once before"],"x":"Stairs, a bulky load and working alone all increase the risk. Avoid the lift if you can (for example a lift, a hoist, or moving the unit in parts), or use a planned team lift with a clear route."},
+{"id":"m01","t":"methods","type":"order","q":"Put the steps of a safe manual lift in order. Top = first, bottom = last.","o":["Plan the lift: check the load, the route and where you will set it down","Get close to the load and take a stable stance, with feet apart","Bend your knees, keep a neutral back, and get a firm grip","Lift smoothly with your legs, keeping the load close to your body","Move your feet to turn; do not twist at the waist, then set the load down with control"],"ends":["First","Last"],"x":"Plan first. Then get close, bend the knees, keep the back in a comfortable neutral position, lift smoothly, keep the load close, and turn by moving your feet rather than twisting."},
+{"id":"m02","t":"methods","type":"mc","q":"When you have to move a load on the level, which is generally better?","o":["Pushing, rather than pulling, if you can do it safely","Pulling the load behind you with one hand, while looking the other way","Jerking the load to get it moving","Twisting your back to change direction"],"x":"HSE guidance is that pushing is generally preferable to pulling. Keep the load at a comfortable height, use a suitable aid such as a trolley where you can, and avoid jerking or twisting."},
+{"id":"m03","t":"methods","type":"mc","q":"What is the best first option for reducing the risk of a manual handling task?","o":["Avoid the hazardous handling if you can: for example deliver to the point of use, split the load, or use a trolley, sack truck or hoist","Always lift it yourself so that nobody else is at risk","Wear a belt and then lift any weight","Hold your breath and lift as fast as possible"],"x":"The Manual Handling Operations Regulations 1992 require employers to avoid hazardous manual handling so far as is reasonably practicable, then assess what cannot be avoided, then reduce the risk. Mechanical aids and better layout come before relying on muscle."},
+{"id":"m04","t":"methods","type":"tf","a":false,"q":"You should lift with a bent back and straight legs, using your back muscles to take the weight.","x":"False. That is the opposite of a safe lift. Bend the knees, keep a neutral back, use the leg muscles, and keep the load close to your body."},
+{"id":"m05","t":"methods","type":"mc","q":"You have to stack boxes of devices on a shelf. Which technique is safer?","o":["Stack on a stable base, keep heavier items lower, do not over-reach, and do not build an unstable tower","Stand on the lower boxes to reach the top shelf","Throw boxes up to a colleague on the top shelf","Stack the heaviest boxes at the very top so they are easier to see"],"x":"A safe stack is stable, within a comfortable reach, and with heavier loads kept lower. Do not stand on the load, and do not throw it."},
+{"id":"h01","t":"heightdanger","type":"mc","q":"Under the Work at Height Regulations 2005, what counts as work at height?","o":["Work in any place where, if precautions were not taken, a person could fall a distance liable to cause personal injury","Only work more than 2 metres above the ground","Only work on a roof","Only work from a crane"],"x":"The old '2 metre rule' does not apply. Work at height includes a fall from ground level into an opening or pit, and work from a ladder or stepladder, if a fall could cause injury. (The 2 metre limit in this unit is a college practical rule, not the legal definition.)"},
+{"id":"h02","t":"heightdanger","type":"tf","a":false,"q":"UK law on work at height only applies when you are more than 2 metres above the ground.","x":"False. That old trigger was removed when the Work at Height Regulations 2005 came in. The regulations apply to any height where a fall could cause personal injury. In this unit, practical assessments are limited to no more than 2 metres and do not use harnesses: that is a college safety rule, not the legal definition."},
+{"id":"h03","t":"heightdanger","type":"multi","q":"Which of these are dangers associated with working at height? Select ALL that apply (4 correct answers).","o":["A person falling from a ladder, platform or opening","An object falling and striking someone below","Falling through a fragile surface, loft boarding or a ceiling void","Over-reaching, or equipment that is unstable or poorly set up","A slight draught in a well-guarded, ground-level corridor with no openings","Reading a datasheet at a desk"],"a":[0,1,2,3],"x":"Falls of people and falling objects are the main dangers. Fragile surfaces, roof voids, poor set-up, over-reaching and bad weather all add risk. Work on the flat with no fall risk is not work at height."},
+{"id":"h04","t":"heightdanger","type":"mc","s":true,"q":"You need to fit a camera high on a wall, from a ladder, above a doorway that people are still using. What is a key danger besides a fall?","o":["Someone below could be struck by a dropped tool or by the ladder itself","The doorway will automatically become a safe exclusion zone","People walking underneath make the ladder more stable","There is no danger to anyone else if you feel confident"],"x":"You must protect people below as well as the person on the ladder. Prevent dropped objects, and set up an exclusion zone or an alternative route so people are not walking under the work."},
+{"id":"h05","t":"heightdanger","type":"mc","q":"Why is a fragile roof, loft space or ceiling void a serious working-at-height hazard for installers?","o":["You can fall through a surface that will not take your weight","Fragile surfaces are always clearly safe to walk on","Loft spaces are exempt from the Work at Height Regulations","Ceiling voids cancel out the risk of a fall"],"x":"Falling through a fragile surface is a well-known cause of serious injury. Do not assume boards, roofs or ceilings will take your weight. Use a safe working platform or crawling boards as the risk assessment requires, and never step on unprotected fragile areas."},
+{"id":"w01","t":"heightcontrol","type":"order","q":"Put the Work at Height Regulations hierarchy in order. Top = first choice, bottom = last.","o":["Avoid work at height if you can","Prevent falls, using an existing safe place or equipment that prevents a fall","Minimise the distance and consequences of a fall if you cannot prevent it"],"ends":["First choice","Last choice"],"x":"Avoid work at height where you reasonably can (for example, assemble at ground level, or use a longer pole or a different mounting). If you cannot avoid it, prevent a fall. If you cannot prevent it, minimise the distance and consequences (for example nets or other collective protection)."},
+{"id":"w02","t":"heightcontrol","type":"mc","q":"When may a ladder be the right choice, according to HSE?","o":["When the risk is low and the work is of short duration, or where a more suitable workplace cannot reasonably be provided","Whenever a job will take most of the day","Whenever you have left the tower scaffold at the yard","Whenever the work is above a busy doorway"],"x":"HSE says ladders are for low-risk, short-duration work (as a rule of thumb, not more than 30 minutes at a time on the ladder), or where existing features cannot reasonably be changed. For longer or higher-risk work, use more suitable equipment such as a tower, a MEWP (if you are trained) or a scaffold."},
+{"id":"w03","t":"heightcontrol","type":"hotspot","d":"ladder","a":"angle","q":"Look at the ladder set-up. Which letter marks the 1-in-4 angle (four units up, one unit out)?","x":"Letter A marks the angle at the base. A leaning ladder should be at about 75 degrees: one unit out for every four units up. Too steep and it can topple backwards; too shallow and the feet can slip."},
+{"id":"w04","t":"heightcontrol","type":"hotspot","d":"ladder","a":"top","q":"Which letter marks the top three rungs, which you should not stand on?","x":"Letter B marks the top three rungs. HSE guidance is not to work from the top three rungs of a leaning ladder. Keep three points of contact, and do not over-reach."},
+{"id":"w05","t":"heightcontrol","type":"multi","q":"What should you check before you use a ladder? Select ALL that apply (4 correct answers).","o":["Stiles, rungs or treads, and feet are in good condition and clean","Locking mechanisms or spreaders work properly (on a stepladder)","It is the right ladder for the job and is long enough, without standing on the top rungs","It will be secured, or footed, and set up on a firm, level base at a safe angle","It has been painted so that any cracks are hidden","The weather and ground conditions do not matter"],"a":[0,1,2,3],"x":"Do a pre-use check every time. Paint can hide damage, so do not use a ladder that has been painted over. Weather, sloping or soft ground, and doors that may open against the ladder all matter. If it is damaged, do not use it: report it."},
+];
+
+const DIAGRAMS = {
+ladder: { title:"A leaning ladder set up against a wall (not to scale). Letters mark parts of the set-up.", vb:"0 0 420 250", hs:[
+   {id:"angle",L:"A",s:"Angle",name:"The 1-in-4 angle (four up, one out)",b:[70,186,130,52]},
+   {id:"top",L:"B",s:"Top rungs",name:"The top three rungs (do not stand here)",b:[268,8,100,70]},
+   {id:"feet",L:"C",s:"Feet",name:"The ladder feet",b:[146,204,70,36]},
+   {id:"worker",L:"D",s:"Worker",name:"The worker, keeping three points of contact",b:[188,88,78,86]},
+   {id:"footer",L:"E",s:"Footer",name:"A second person footing the ladder",b:[86,128,70,70]}],
+  art:`<rect x="0" y="0" width="420" height="250" fill="#22354f"/>
+  <rect x="0" y="220" width="420" height="30" fill="#2c425f"/>
+  <rect x="340" y="0" width="80" height="222" fill="#4a5d73"/>
+  <rect x="348" y="16" width="28" height="44" fill="#88c6ff" opacity=".35"/>
+  <rect x="384" y="16" width="28" height="44" fill="#88c6ff" opacity=".35"/>
+  <!-- 1 in 4 guide -->
+  <path d="M170 220 H340" stroke="#ffb020" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M170 220 V188 H204" stroke="#ffb020" stroke-width="2" fill="none"/>
+  <text x="118" y="214" fill="#ffe7a8" font-size="11" font-weight="700" font-family="Calibri,'Segoe UI',Arial,sans-serif">1 out</text>
+  <text x="176" y="180" fill="#ffe7a8" font-size="11" font-weight="700" font-family="Calibri,'Segoe UI',Arial,sans-serif">4 up</text>
+  <!-- ladder: top at (340,20), rise 200, run 50, base at (290,220) wait use longer for visibility: top (340,16), base (190,220) is more than 1 in 4.
+       Correct 1 in 4: rise 204, run 51, base x=340-51=289. -->
+  <g stroke="#dbe6f3" stroke-width="4" fill="none" stroke-linecap="round">
+    <line x1="289" y1="220" x2="340" y2="16"/>
+    <line x1="313" y1="220" x2="364" y2="16"/>
+  </g>
+  <g stroke="#dbe6f3" stroke-width="3">
+    <line x1="298" y1="186" x2="322" y2="186"/>
+    <line x1="306" y1="152" x2="330" y2="152"/>
+    <line x1="314" y1="118" x2="338" y2="118"/>
+    <line x1="322" y1="84" x2="346" y2="84"/>
+    <line x1="330" y1="52" x2="354" y2="52"/>
+    <line x1="336" y1="28" x2="360" y2="28"/>
+  </g>
+  <!-- highlight top 3 rungs -->
+  <rect x="326" y="16" width="40" height="50" fill="#ff6b6b" opacity=".28"/>
+  <!-- feet -->
+  <rect x="276" y="216" width="22" height="8" rx="2" fill="#ffb020"/>
+  <rect x="304" y="216" width="22" height="8" rx="2" fill="#ffb020"/>
+  <!-- worker mid ladder, 3 points of contact -->
+  <circle cx="318" cy="100" r="8" fill="#e8ecf1"/>
+  <path d="M318 108 v28" stroke="#e8ecf1" stroke-width="4"/>
+  <path d="M318 118 L304 108" stroke="#e8ecf1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M318 136 L306 152" stroke="#e8ecf1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M318 136 L332 150" stroke="#e8ecf1" stroke-width="4" stroke-linecap="round"/>
+  <!-- footer -->
+  <circle cx="122" cy="168" r="8" fill="#c4ccd6"/>
+  <path d="M122 176 v28" stroke="#c4ccd6" stroke-width="4"/>
+  <path d="M122 188 L146 200" stroke="#c4ccd6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M122 204 L110 220" stroke="#c4ccd6" stroke-width="4"/>
+  <path d="M122 204 L136 220" stroke="#c4ccd6" stroke-width="4"/>
+  <path d="M122 176 L148 200" stroke="#c4ccd6" stroke-width="3"/>
+`}
+};
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const LS={get(k,d){try{const v=localStorage.getItem(QUIZ.ls+k);return v===null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(QUIZ.ls+k,JSON.stringify(v));}catch(e){}}};
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const TOPIC_KEYS=Object.keys(TOPICS);
+const TYPE_LABEL={mc:"Multiple choice",tf:"True or false",multi:"Select all that apply",match:"Tap to match",order:"Put in order",hotspot:"Diagram: pick a letter",scenario:"Site scenario"};
+const qType=q=>q.type==="mc"&&q.s?"scenario":q.type;
+
+/* ---------- sound (off by default) ---------- */
+let soundOn=LS.get("sound",false), actx=null;
+function beep(seq){ if(!soundOn) return; try{ actx=actx||new (window.AudioContext||window.webkitAudioContext)(); let t=actx.currentTime;
+  seq.forEach(([f,d,type])=>{const o=actx.createOscillator(),g=actx.createGain();o.type=type||"sine";o.frequency.value=f;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+d);t+=d*.9;}); }catch(e){} }
+const SFX={ok:()=>beep([[660,.09],[990,.16]]),bad:()=>beep([[140,.35,"square"]]),door:()=>beep([[523,.1],[659,.1],[784,.1],[1047,.25]]),tick:()=>beep([[1200,.03,"square"]])};
+function setSound(on){soundOn=on;LS.set("sound",on);const b=$("#soundBtn");b.setAttribute("aria-pressed",on?"true":"false");b.innerHTML=on?ICON.sound+"<span>Sound on</span>":ICON.mute+"<span>Sound off</span>";}
+
+const ICON={
+ sound:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8a5 5 0 0 1 0 8M18.5 5.5a9 9 0 0 1 0 13" stroke="currentColor" stroke-width="2" fill="none"/></svg>',
+ mute:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="2"/></svg>',
+ fire:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-3 2-4 2-7 2 1 3 3 3 3s1-3 0-7z" fill="currentColor"/></svg>',
+ shield:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" fill="currentColor"/></svg>',
+ star:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5L5.5 21l2-7.5L2 9h7z" fill="currentColor"/></svg>',
+ key:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M12 12h10M18 12v4M21 12v3" stroke="currentColor" stroke-width="2.5"/></svg>',
+ up:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6l-7 8h14z" fill="currentColor"/></svg>',
+ down:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18l-7-8h14z" fill="currentColor"/></svg>'
+};
+
+/* ---------- ranks & badges ---------- */
+const RANKS=QUIZ.ranks||[{min:90,name:"Master Key",col:"#ffd36b",msg:"Outstanding. You've unlocked every door."},{min:70,name:"Supervisor",col:"#5aa9ff",msg:"Strong work. A little revision and you'll hold the master key."},{min:50,name:"Keyholder",col:"#2ecc71",msg:"Good start. Revise the topics flagged below and try again."},{min:0,name:"Visitor",col:"#c4ccd6",msg:"Signed in as a visitor. Work through the flagged notes sections, then retry."}];
+const rankFor=p=>RANKS.find(r=>p>=r.min);
+function rankBadge(r,size){return `<svg class="rankbadge" width="${size}" height="${size}" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#0d1726" stroke="${r.col}" stroke-width="6"/><circle cx="50" cy="40" r="14" fill="none" stroke="${r.col}" stroke-width="7"/><path d="M50 54v28M50 70h12M50 80h9" stroke="${r.col}" stroke-width="7" stroke-linecap="round"/></svg>`;}
+
+/* ---------- state ---------- */
+let S=null, timerId=null, playerName="";
+const MODES={
+ quick:{name:"Quick Fire",timer:true},
+ mission:{name:"Full Mission",timer:false,shields:true},
+ practice:{name:"Practice",timer:false},
+ retry:{name:"Retry wrong answers",timer:false}
+};
+const timeLimit=q=>({match:45,order:40,multi:30}[q.type]||20);
+
+function pickVaried(list,n){ // favour a mix of question types
+  const pool=shuffle(list), out=[], seen=new Set();
+  for(const q of pool){ if(out.length>=n) break; const t=qType(q); if(!seen.has(t)){seen.add(t);out.push(q);} }
+  for(const q of pool){ if(out.length>=n) break; if(!out.includes(q)) out.push(q); }
+  return shuffle(out);
+}
+function buildQueue(mode,opt){
+  if(mode==="quick"){ const per={},out=[]; for(const q of shuffle(BANK)){ if(out.length>=10) break; per[q.t]=per[q.t]||0; if(per[q.t]<2){per[q.t]++;out.push(q);} } return {queue:out}; }
+  if(mode==="mission"){ const rounds=TOPIC_KEYS.map(t=>({t,qs:pickVaried(BANK.filter(q=>q.t===t),5)})); return {queue:rounds.flatMap(r=>r.qs),rounds}; }
+  if(mode==="practice"){ const list=opt==="all"?BANK:BANK.filter(q=>q.t===opt); return {queue:shuffle(list)}; }
+  if(mode==="retry"){ return {queue:shuffle(opt)}; }
+}
+function start(mode,opt){
+  const b=buildQueue(mode,opt);
+  S={mode,opt,queue:b.queue,rounds:b.rounds||null,idx:0,score:0,streak:0,best:0,shields:MODES[mode].shields?3:0,answers:[],badges:new Set(),roundStars:[],startedAt:new Date(),name:playerName};
+  show("play"); renderHUD(); renderQ();
+}
+
+/* ---------- screens ---------- */
+function show(id){ $$(".screen").forEach(s=>s.hidden=s.id!==id); window.scrollTo(0,0); }
+function renderHUD(){
+  const m=MODES[S.mode];
+  $("#hudMode").textContent=m.name+(S.rounds?` · Door ${roundOf(S.idx)+1} of ${S.rounds.length}`:"");
+  $("#hudScore").textContent=S.score;
+  $("#hudStreak").innerHTML=ICON.fire+`<span>${S.streak}</span>`; $("#hudStreak").setAttribute("aria-label","Streak "+S.streak);
+  const sh=$("#hudShields"); sh.hidden=!m.shields;
+  if(m.shields){ sh.innerHTML=[0,1,2].map(i=>`<span class="sh ${i<S.shields?"on":""}">${ICON.shield}</span>`).join(""); sh.setAttribute("aria-label",`Shields ${S.shields} of 3`); }
+  const pct=Math.round(100*S.idx/S.queue.length);
+  $("#progFill").style.width=pct+"%"; $("#prog").setAttribute("aria-valuenow",pct);
+  $("#progText").textContent=`Question ${Math.min(S.idx+1,S.queue.length)} of ${S.queue.length}`;
+}
+function roundOf(i){ if(!S.rounds) return 0; let c=0; for(let r=0;r<S.rounds.length;r++){ c+=S.rounds[r].qs.length; if(i<c) return r; } return S.rounds.length-1; }
+
+/* ---------- question rendering ---------- */
+let cur=null;
+const plural=(n,w)=>n+" "+w+(n===1?"":"s");
+function howTo(q){
+  const ty=qType(q);
+  if(ty==="mc") return "Pick ONE answer. It is marked as soon as you tap it.";
+  if(ty==="scenario") return "Read the situation, then pick the ONE best answer. It is marked as soon as you tap it.";
+  if(ty==="tf") return "Tap True or False. It is marked as soon as you tap.";
+  if(ty==="multi") return `Tap the ${q.a.length} correct answers (tap again to untick), then tap Check.`;
+  if(ty==="match") return `Tap a term, then tap the description that matches it. Tap a matched description to undo it. Match all ${q.p.length}, then tap Check.`;
+  if(ty==="order"){ const e=q.ends||["First","Last"]; return `Use the ▲ ▼ buttons to move items. Top = ${e[0]}, bottom = ${e[1]}. Then tap Check.`; }
+  if(ty==="hotspot") return DIAGRAMS[q.d].keypad?"Tap ONE key. It is marked as soon as you tap.":"Tap ONE part on the diagram, or its yellow letter button below. It is marked as soon as you tap.";
+}
+function renderQ(){
+  const q=S.queue[S.idx]; cur={q,answered:false,t0:performance.now()};
+  setDoor("idle");
+  const tp=TOPICS[q.t], ty=qType(q);
+  const box=$("#qbox");
+  box.innerHTML=`<div class="qmeta"><span class="chip topic">${esc(tp.name)}</span><span class="chip type">${TYPE_LABEL[ty]}</span></div>
+   ${ty==="scenario"?'<div class="scen-tag">SITE SCENARIO</div>':""}
+   <h2 id="qtext" class="qtext" tabindex="-1">${ty==="tf"?'<span class="tfpre">True or false?</span> ':""}${esc(q.q)}</h2>
+   <div class="howto" id="howtoLine"><b>How to answer:</b> ${esc(howTo(q))}</div><div id="qbody"></div>`;
+  $("#feedback").hidden=true; $("#feedback").className="feedback";
+  const body=$("#qbody");
+  ({mc:rMC,tf:rTF,multi:rMulti,match:rMatch,order:rOrder,hotspot:rHot})[q.type](q,body);
+  renderHUD();
+  $("#qtext").focus({preventScroll:true});
+  startTimer(q);
+}
+function optBtn(html,cls,attrs){return `<button type="button" class="opt ${cls||""}" ${attrs||""}>${html}</button>`;}
+function rMC(q,body){
+  cur.order=shuffle(q.o.map((_,i)=>i));
+  body.innerHTML=`<div class="opts" role="group" aria-label="Answer options. Pick one.">${cur.order.map((oi,k)=>optBtn(`<span class="key">${"ABCD"[k]}</span><span>${esc(q.o[oi])}</span>`,"",`data-i="${oi}"`)).join("")}</div>`;
+  $$(".opt",body).forEach(b=>b.onclick=()=>{ if(cur.answered) return; const i=+b.dataset.i; markOpts(body,[b]); finish(i===0,q.o[i],q.o[0]); });
+}
+function markOpts(body,chosen){ $$(".opt",body).forEach(b=>{b.disabled=true; if(+b.dataset.i===0) b.classList.add("right");}); chosen.forEach(b=>{ if(+b.dataset.i!==0) b.classList.add("wrong"); b.classList.add("chosen");}); }
+function rTF(q,body){
+  body.innerHTML=`<div class="opts tf" role="group" aria-label="True or false">${optBtn("<span class='key'>T</span><span>True</span>","",'data-v="1"')}${optBtn("<span class='key'>F</span><span>False</span>","",'data-v="0"')}</div>`;
+  $$(".opt",body).forEach(b=>b.onclick=()=>{ if(cur.answered) return; const v=b.dataset.v==="1", ok=v===q.a;
+    $$(".opt",body).forEach(x=>{x.disabled=true; if((x.dataset.v==="1")===q.a) x.classList.add("right");}); b.classList.add("chosen"); if(!ok) b.classList.add("wrong");
+    finish(ok,v?"True":"False",q.a?"True":"False"); });
+}
+function rMulti(q,body){
+  cur.order=shuffle(q.o.map((_,i)=>i)); const sel=new Set(), need=q.a.length;
+  body.innerHTML=`<div class="opts" role="group" aria-label="Select ${need} answers">${cur.order.map(oi=>optBtn(`<span class="tick" aria-hidden="true"></span><span>${esc(q.o[oi])}</span>`,"multi",`data-i="${oi}" aria-pressed="false"`)).join("")}</div>
+   <p class="checkhint" id="chkHint" aria-live="polite"></p><button type="button" class="btn primary check" disabled aria-describedby="chkHint">Check answer</button>`;
+  const chk=$(".check",body), hint=$("#chkHint");
+  const upd=()=>{ const n=sel.size; chk.disabled=n!==need;
+    hint.textContent=n<need?`Picked ${n} of ${need}. Pick ${need-n} more to unlock Check.`:n>need?`You have picked ${n}, but only ${need} are correct. Untick ${n-need} to unlock Check.`:`Picked ${n} of ${need}. Tap Check when you are ready.`;
+    hint.classList.toggle("ready",n===need); };
+  upd();
+  $$(".opt",body).forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; sel.has(i)?sel.delete(i):sel.add(i); b.setAttribute("aria-pressed",sel.has(i)); b.classList.toggle("on",sel.has(i)); upd(); });
+  chk.onclick=()=>{ const right=new Set(q.a), ok=sel.size===right.size&&[...sel].every(i=>right.has(i));
+    $$(".opt",body).forEach(b=>{ const i=+b.dataset.i; b.disabled=true; if(right.has(i)) b.classList.add("right"); if(sel.has(i)&&!right.has(i)) b.classList.add("wrong"); if(!sel.has(i)&&right.has(i)) b.classList.add("missed"); });
+    chk.hidden=true; hint.hidden=true;
+    const det=`<ul class="det">${cur.order.map(i=>{const r=right.has(i),s=sel.has(i); if(!r&&!s) return ""; const cls=r&&s?"ok":s?"no":"miss"; const lab=r&&s?"✓ Correct, and you picked it":s?"✗ You picked this, but it is NOT correct":"! Missed: this one IS correct"; return `<li class="${cls}"><b>${lab}:</b> ${esc(q.o[i])}</li>`;}).join("")}</ul>`;
+    finish(ok,[...sel].map(i=>q.o[i]).join("; ")||"(nothing)",q.a.map(i=>q.o[i]).join("; "),false,det,`<ul class="corrlist">${q.a.map(i=>`<li>${esc(q.o[i])}</li>`).join("")}</ul>`); };
+}
+const PAIRCOL=["#ffb020","#5aa9ff","#ff7ab6","#2ecc71","#b48cff","#36d6d6"];
+function rMatch(q,body){
+  const n=q.p.length, terms=shuffle(q.p.map((_,i)=>i)), defs=shuffle(q.p.map((_,i)=>i));
+  const pair={}; let selT=null;
+  body.innerHTML=`<div class="match"><div><div class="colhead">1. Tap a term</div><div class="terms" role="group" aria-label="Terms">${terms.map(i=>`<button type="button" class="term" data-t="${i}" aria-pressed="false"><span class="dot" aria-hidden="true"></span>${esc(q.p[i][0])}</button>`).join("")}</div></div>
+   <div><div class="colhead">2. Then tap the description it matches</div><div class="defs" role="group" aria-label="Descriptions">${defs.map(i=>`<button type="button" class="def" data-d="${i}"><span class="tag" aria-hidden="true"></span><span class="dtext">${esc(q.p[i][1])}</span><span class="res"></span></button>`).join("")}</div></div></div>
+   <p class="selnow" id="selNow" aria-live="polite"></p>
+   <p class="checkhint" id="chkHint"></p>
+   <div class="row"><button type="button" class="btn ghost clear">Clear all</button><button type="button" class="btn primary check" disabled aria-describedby="chkHint">Check answer</button></div>`;
+  const colOf=t=>PAIRCOL[terms.indexOf(t)%PAIRCOL.length];
+  function paint(){
+    $$(".term",body).forEach(b=>{const t=+b.dataset.t, d=Object.keys(pair).find(k=>pair[k]===t); b.classList.toggle("sel",selT===t); b.setAttribute("aria-pressed",selT===t);
+      b.classList.toggle("paired",d!==undefined); b.style.setProperty("--pc",colOf(t)); b.setAttribute("aria-label",q.p[t][0]+(d!==undefined?" (matched)":"")+(selT===t?" (selected)":"")); });
+    $$(".def",body).forEach(b=>{const d=+b.dataset.d, t=pair[d]; const tag=$(".tag",b);
+      if(t!==undefined){b.classList.add("paired");b.style.setProperty("--pc",colOf(t));tag.textContent="Matched to: "+q.p[t][0];b.setAttribute("aria-label",q.p[d][1]+". Matched to "+q.p[t][0]+". Tap to undo.");}
+      else {b.classList.remove("paired");tag.textContent="";b.setAttribute("aria-label",q.p[d][1]+(selT!==null?". Tap to match with "+q.p[selT][0]:""));} });
+    const done=Object.keys(pair).length;
+    $("#selNow").innerHTML=selT!==null?`Selected term: <b>${esc(q.p[selT][0])}</b>. Now tap its description.`:(done<n?"Tap a term to select it.":"");
+    const h=$("#chkHint"); h.textContent=done<n?`${done} of ${n} matched. Match all ${n} to unlock Check.`:`All ${n} matched. Tap Check when you are ready.`; h.classList.toggle("ready",done===n);
+    $(".check",body).disabled=done<n;
+  }
+  $$(".term",body).forEach(b=>b.onclick=()=>{ selT=+b.dataset.t; paint(); });
+  $$(".def",body).forEach(b=>b.onclick=()=>{ const d=+b.dataset.d;
+    if(pair[d]!==undefined){ selT=pair[d]; delete pair[d]; paint(); return; } /* tapping a matched description undoes it */
+    if(selT===null){ paint(); return; }
+    Object.keys(pair).forEach(k=>{ if(pair[k]===selT) delete pair[k]; });
+    pair[d]=selT;
+    const next=terms.find(t=>!Object.values(pair).includes(t)); selT=next===undefined?null:next; paint(); });
+  $(".clear",body).onclick=()=>{ Object.keys(pair).forEach(k=>delete pair[k]); selT=terms[0]; paint(); };
+  selT=terms[0]; paint();
+  $(".check",body).onclick=()=>{ let ok=true;
+    $$(".def",body).forEach(b=>{ const d=+b.dataset.d, good=pair[d]===d; if(!good) ok=false; b.disabled=true; b.classList.add(good?"right":"wrong"); $(".res",b).textContent=good?"✓ Correct":"✗ Should be: "+q.p[d][0]; });
+    $$(".term",body).forEach(b=>b.disabled=true); $(".row",body).hidden=true; $("#selNow").hidden=true; $("#chkHint").hidden=true;
+    const det=`<ul class="det">${defs.map(d=>{const good=pair[d]===d; return `<li class="${good?"ok":"no"}">“${esc(q.p[d][1])}”<br><b>${good?"✓ You chose "+esc(q.p[pair[d]][0])+". Correct.":"✗ You chose "+esc(q.p[pair[d]][0])+". Correct: "+esc(q.p[d][0])}</b></li>`;}).join("")}</ul>`;
+    finish(ok,defs.map(d=>`${q.p[pair[d]][0]} → ${q.p[d][1]}`).join("; "),q.p.map(p=>`${p[0]} → ${p[1]}`).join("; "),false,det,`<ul class="corrlist">${q.p.map(p=>`<li><b>${esc(p[0])}</b> → ${esc(p[1])}</li>`).join("")}</ul>`); };
+}
+function rOrder(q,body){
+  let ord=shuffle(q.o.map((_,i)=>i)); while(ord.every((v,i)=>v===i)) ord=shuffle(ord);
+  const ends=q.ends||["First","Last"];
+  body.innerHTML=`<div class="endlab top">▲ TOP = ${esc(ends[0])}</div><ol class="order" aria-label="Items to put in order. Top is ${esc(ends[0])}, bottom is ${esc(ends[1])}."></ol><div class="endlab bot">▼ BOTTOM = ${esc(ends[1])}</div>
+   <p class="checkhint ready" id="chkHint">Move the items, then tap Check when you are happy with the order.</p><button type="button" class="btn primary check" aria-describedby="chkHint">Check order</button>`;
+  const ol=$(".order",body);
+  function paint(focusIdx,dir){
+    ol.innerHTML=ord.map((oi,k)=>`<li class="oitem" data-i="${oi}"><span class="onum" aria-hidden="true">${k+1}</span><span class="otext">${esc(q.o[oi])}</span><span class="obtns">
+     <button type="button" class="mv up" data-k="${k}" ${k===0?"disabled":""} aria-label="Move up: ${esc(q.o[oi])}">${ICON.up}</button>
+     <button type="button" class="mv down" data-k="${k}" ${k===ord.length-1?"disabled":""} aria-label="Move down: ${esc(q.o[oi])}">${ICON.down}</button></span></li>`).join("");
+    $$(".mv",ol).forEach(b=>b.onclick=()=>{ const k=+b.dataset.k, up=b.classList.contains("up"), j=up?k-1:k+1; [ord[k],ord[j]]=[ord[j],ord[k]]; paint(j,up?"up":"down"); });
+    if(focusIdx!==undefined){ const li=ol.children[focusIdx]; li.classList.add("moved"); let f=$(".mv."+dir,li); if(!f||f.disabled) f=$(".mv:not([disabled])",li); f&&f.focus(); }
+  }
+  paint();
+  $(".check",body).onclick=()=>{ const ok=ord.every((v,i)=>v===i);
+    $$(".oitem",ol).forEach((li,k)=>{ const good=+li.dataset.i===k; li.classList.add(good?"right":"wrong"); li.insertAdjacentHTML("beforeend",good?`<span class="ores ok">✓ Right place</span>`:`<span class="ores">✗ Should be number ${(+li.dataset.i)+1}</span>`); });
+    $$(".mv",ol).forEach(b=>b.disabled=true); $(".check",body).hidden=true; $("#chkHint").hidden=true;
+    const nRight=ord.filter((v,i)=>v===i).length;
+    const det=`<p class="detp">${nRight} of ${ord.length} items were in the right place.</p>`;
+    finish(ok,ord.map(i=>q.o[i]).join(" → "),q.o.join(" → "),false,det,`<ol class="corrlist">${q.o.map(t=>`<li>${esc(t)}</li>`).join("")}</ol>`); };
+}
+function svgDiagram(d,key){
+  const boxes=!!d.boxes;
+  const hs=d.hs.map(h=>{ const [x,y,w,ht]=h.b;
+    if(d.keypad) return `<g class="hs key" role="button" tabindex="0" data-h="${h.id}" aria-label="Key ${h.L}"><rect x="${x}" y="${y}" width="${w}" height="${ht}" rx="10" class="keycap"/><text x="${x+w/2}" y="${y+ht/2+10}" text-anchor="middle" class="keytxt">${h.L}</text></g>`;
+    const bx=boxes?x+w/2:x+14, by=boxes?y+18:y+14;
+    return `<g class="hs" role="button" tabindex="0" data-h="${h.id}" aria-label="Part ${h.L}">
+     ${boxes?`<rect x="${x}" y="${y}" width="${w}" height="${ht}" rx="8" class="orgbox"/>`:""}
+     <rect x="${x}" y="${y}" width="${w}" height="${ht}" rx="8" class="hit"/>
+     <g class="badge"><circle cx="${bx}" cy="${by}" r="${boxes?15:14}"/><text x="${bx}" y="${by+6.5}" text-anchor="middle">${h.L}</text></g>
+     <text class="rev" x="${x+w/2}" y="${y+ht-4}" text-anchor="middle">${esc(h.s||h.name)}</text></g>`; }).join("");
+  return `<figure class="diagram"><svg viewBox="${d.vb}" role="group" aria-label="${esc(d.title)}">${d.art}${hs}</svg><figcaption>${esc(d.title)}</figcaption></figure>`;
+}
+function rHot(q,body){
+  const d=DIAGRAMS[q.d];
+  body.innerHTML=svgDiagram(d,q.d)+(d.keypad?"":`<div class="colhead">Or tap a letter:</div><div class="hsbtns" role="group" aria-label="Letter buttons. Pick one.">${d.hs.map(h=>`<button type="button" class="hsb" data-h="${h.id}" aria-label="Part ${h.L}"><b>${h.L}</b><span class="hsn"></span></button>`).join("")}</div>`);
+  const pick=id=>{ if(cur.answered) return; const ok=id===q.a, svg=$("svg",body); svg.classList.add("revealed");
+    $$(".hs",body).forEach(g=>{ g.setAttribute("tabindex","-1"); if(g.dataset.h===q.a) g.classList.add("right"); else if(g.dataset.h===id) g.classList.add("wrong"); });
+    $$(".hsb",body).forEach(b=>{ b.disabled=true; const h=d.hs.find(x=>x.id===b.dataset.h); $(".hsn",b).textContent=h.name; if(h.id===q.a) b.classList.add("right"); else if(h.id===id) b.classList.add("wrong"); });
+    const nm=id2=>{const h=d.hs.find(x=>x.id===id2);return (d.keypad?"Key ":h.L+": ")+(d.keypad?h.L:h.name);};
+    finish(ok,nm(id),nm(q.a)); };
+  $$(".hs",body).forEach(g=>{ g.addEventListener("click",()=>pick(g.dataset.h)); g.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(g.dataset.h);} }); });
+  $$(".hsb",body).forEach(b=>b.onclick=()=>pick(b.dataset.h));
+}
+
+/* ---------- timer (pausable, e.g. while How to play is open) ---------- */
+let tState=null;
+function startTimer(q){
+  stopTimer(); const tw=$("#timer"); if(!MODES[S.mode].timer){ tw.hidden=true; tState=null; return; }
+  tw.hidden=false; tState={lim:timeLimit(q)*1000,left:timeLimit(q)*1000,last:performance.now(),lastSec:null}; runTimer();
+}
+function runTimer(){ if(!tState) return; tState.last=performance.now(); const tick=()=>{ const now=performance.now(); tState.left=Math.max(0,tState.left-(now-tState.last)); tState.last=now; cur.left=tState.left/tState.lim;
+    $("#timerFill").style.width=(100*tState.left/tState.lim)+"%"; $("#timerFill").classList.toggle("low",tState.left<5000);
+    const sec=Math.ceil(tState.left/1000); $("#timerText").textContent=sec+"s"; if(sec<=5&&sec!==tState.lastSec&&sec>0){SFX.tick();} tState.lastSec=sec;
+    if(tState.left<=0){ stopTimer(); timeout(); } };
+  tick(); timerId=setInterval(tick,100); }
+function pauseTimer(){ if(timerId){ clearInterval(timerId); timerId=null; return true; } return false; }
+function stopTimer(){ if(timerId){clearInterval(timerId);timerId=null;} }
+function timeout(){ if(cur.answered) return; const q=cur.q;
+  $$("#qbody button, #qbody .hs").forEach(b=>{b.disabled=true;b.setAttribute&&b.setAttribute("tabindex","-1");});
+  if(q.type==="mc") $$('#qbody .opt[data-i="0"]').forEach(b=>b.classList.add("right"));
+  if(q.type==="tf") $$('#qbody .opt[data-v="'+(q.a?1:0)+'"]').forEach(b=>b.classList.add("right"));
+  if(q.type==="multi") q.a.forEach(i=>$$('#qbody .opt[data-i="'+i+'"]').forEach(b=>b.classList.add("right")));
+  if(q.type==="hotspot"){ const sv=$("#qbody svg"); sv&&sv.classList.add("revealed"); $$('#qbody [data-h="'+q.a+'"]').forEach(g=>g.classList.add("right")); }
+  ["#chkHint","#selNow"].forEach(s=>{const e=$(s); if(e) e.hidden=true;}); $$("#qbody .check, #qbody .row").forEach(e=>e.hidden=true);
+  let corrHTML=null;
+  if(q.type==="match") corrHTML=`<ul class="corrlist">${q.p.map(p=>`<li><b>${esc(p[0])}</b> → ${esc(p[1])}</li>`).join("")}</ul>`;
+  if(q.type==="order") corrHTML=`<ol class="corrlist">${q.o.map(t=>`<li>${esc(t)}</li>`).join("")}</ol>`;
+  if(q.type==="multi") corrHTML=`<ul class="corrlist">${q.a.map(i=>`<li>${esc(q.o[i])}</li>`).join("")}</ul>`;
+  finish(false,"(time ran out)",correctText(q),true,"",corrHTML); }
+function correctText(q){ if(q.type==="mc") return q.o[0]; if(q.type==="tf") return q.a?"True":"False"; if(q.type==="multi") return q.a.map(i=>q.o[i]).join("; ");
+  if(q.type==="match") return q.p.map(p=>`${p[0]} → ${p[1]}`).join("; "); if(q.type==="order") return q.o.join(" → "); const D=DIAGRAMS[q.d], h=D.hs.find(x=>x.id===q.a); return D.keypad?"Key "+h.L:h.L+": "+h.name; }
+
+/* ---------- marking & feedback ---------- */
+function finish(ok,given,correct,timedOut,detailHTML,correctHTML){
+  if(cur.answered) return; cur.answered=true; stopTimer();
+  const q=cur.q, secs=(performance.now()-cur.t0)/1000; let pts=0, note="";
+  if(ok){ S.streak++; S.best=Math.max(S.best,S.streak); pts=100;
+    if(MODES[S.mode].timer){ const sb=Math.round(50*(cur.left||0)); pts+=sb; if(sb) note+=`+${sb} speed bonus `; }
+    const st=10*Math.min(S.streak-1,5); if(st){pts+=st; note+=`+${st} streak bonus `;}
+    if(MODES[S.mode].shields&&S.streak>0&&S.streak%5===0&&S.shields<3){S.shields++; note+="· 5 in a row: shield recharged! ";}
+    if(S.streak>=5) S.badges.add("streak5"); if(S.streak>=10) S.badges.add("streak10");
+    SFX.ok(); setDoor("open");
+  } else {
+    if(MODES[S.mode].shields&&S.shields>0){ S.shields--; note="A shield took the hit, so your streak is safe. Shields left: "+S.shields+"."; }
+    else { if(S.streak>0) note="Streak reset to 0."; S.streak=0; }
+    SFX.bad(); setDoor("denied");
+  }
+  S.score+=pts;
+  S.answers.push({q,ok,given,correct,secs,timedOut:!!timedOut});
+  const fb=$("#feedback"); fb.hidden=false; fb.className="feedback "+(ok?"good":"bad")+(reduceMotion?"":" pop");
+  const isLast=S.idx>=S.queue.length-1, endOfRound=S.rounds&&!isLast&&roundOf(S.idx)!==roundOf(S.idx+1);
+  const head=ok?"Correct!":timedOut?"Time ran out, so this counts as wrong.":(q.type==="match"||q.type==="order"||q.type==="multi")?"Not quite. See which parts were right and wrong below.":"Not this time.";
+  fb.innerHTML=`<div class="stamp">${ok?(QUIZ.okStamp||"CORRECT"):(timedOut?"TIME OUT: "+(QUIZ.badStamp||"INCORRECT"):(QUIZ.badStamp||"INCORRECT"))}</div>
+   <p class="fbhead">${esc(head)}</p>
+   ${ok?`<div class="pts">+${pts} points ${note?`<small>${esc(note)}</small>`:""}</div>`:(note?`<div class="pts"><small>${esc(note)}</small></div>`:"")}
+   ${(!ok&&detailHTML)?`<div class="detwrap"><b>Your answer:</b>${detailHTML}</div>`:""}
+   <div class="corr"><b>${ok?"The answer:":"Correct answer:"}</b> ${correctHTML||esc(correct)}</div>
+   <p class="expl"><b>Why:</b> ${esc(q.x)}</p>
+   <button type="button" class="btn primary next" id="nextBtn">${isLast?"See my results":endOfRound?"Open the next door":"Next question"} →</button>`;
+  $("#live").textContent=(ok?"Correct. ":"Incorrect. Correct answer: "+correct+". ")+q.x;
+  renderHUD();
+  const nb=$("#nextBtn"); nb.onclick=next; nb.focus({preventScroll:true}); setTimeout(()=>{ fb.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"nearest"}); },60);
+}
+function next(){
+  const r0=roundOf(S.idx); S.idx++;
+  if(S.idx>=S.queue.length){ if(S.rounds) roundStars(r0); return endGame(); }
+  if(S.rounds&&roundOf(S.idx)!==r0){ roundStars(r0); return roundBreak(r0); }
+  renderQ();
+}
+function roundStars(r){ const qs=S.rounds[r].qs, got=S.answers.filter(a=>qs.includes(a.q)&&a.ok).length; const stars=got>=5?3:got>=4?2:got>=3?1:0; S.roundStars[r]={got,of:qs.length,stars}; if(stars===3) S.badges.add("flawless"); return S.roundStars[r]; }
+function roundBreak(r){
+  const rs=S.roundStars[r], t=TOPICS[S.rounds[r].t], nt=TOPICS[S.rounds[r+1].t], open=rs.stars>0;
+  show("round"); if(open) SFX.door();
+  $("#roundBox").innerHTML=`<div class="bigdoor ${open?"open":"shut"}" aria-hidden="true">${doorSVG(open?"open":"denied",true)}</div>
+   <h2 tabindex="-1" id="roundH">Door ${r+1}: ${open?"Unlocked!":"Still locked"}</h2>
+   <p class="rtopic">${esc(t.name)}: <b>${rs.got} / ${rs.of}</b> correct</p>
+   <div class="stars" aria-label="${rs.stars} of 3 stars">${[0,1,2].map(i=>`<span class="${i<rs.stars?"on":""}">${ICON.star}</span>`).join("")}</div>
+   <p class="muted">${open?(rs.stars===3?"Flawless. Perfect round!":"Nice work. Keep that streak going."):"Get 3 or more right to unlock a door. Revise: "+esc(t.notes)}</p>
+   <p class="nextup">Next up: <b>Door ${r+2}: ${esc(nt.name)}</b></p>
+   <button type="button" class="btn primary" id="contBtn">Enter Door ${r+2} →</button>`;
+  $("#contBtn").onclick=()=>{ show("play"); renderQ(); }; $("#roundH").focus();
+}
+
+/* ---------- door graphic ---------- */
+function doorSVG(state,big){ return `<svg viewBox="0 0 120 140" class="doorsvg ${state}" role="img" aria-label="${state==="open"?"Door unlocked":state==="denied"?"Access denied":"Door locked"}">
+ <rect x="18" y="8" width="64" height="128" fill="#3a5070" rx="2"/><rect x="22" y="12" width="56" height="124" fill="#101a29"/>
+ <g class="leaf"><rect x="22" y="12" width="56" height="124" fill="#9a6a43"/><rect x="28" y="20" width="44" height="46" fill="#a97a52" stroke="#7d5234"/><rect x="28" y="74" width="44" height="54" fill="#a97a52" stroke="#7d5234"/><rect x="66" y="70" width="9" height="4" rx="2" fill="#ddd"/></g>
+ <rect x="90" y="56" width="22" height="34" rx="4" fill="#20262e" stroke="#c4ccd6" stroke-width="2"/><circle class="led" cx="101" cy="66" r="5"/>
+ <path d="M95 80 q6 -5 12 0" stroke="#c4ccd6" stroke-width="2" fill="none"/></svg>`; }
+function setDoor(state){ const d=$("#door"); d.innerHTML=doorSVG(state); d.className="door "+state+(reduceMotion?"":" anim"); }
+
+/* ---------- end ---------- */
+function pctOf(a){ return a.length?Math.round(100*a.filter(x=>x.ok).length/a.length):0; }
+function endGame(){
+  stopTimer(); show("end");
+  const A=S.answers, right=A.filter(a=>a.ok).length, pct=pctOf(A), rk=rankFor(pct);
+  if(S.mode==="quick"&&right>=7&&A.length&&A.reduce((s,a)=>s+a.secs,0)/A.length<8) S.badges.add("speed");
+  if(S.mode==="mission"&&S.shields===3&&A.length===S.queue.length) S.badges.add("shield");
+  const BADGES={streak5:["Hot Streak","5 in a row"],streak10:["On Fire","10 in a row"],flawless:["Flawless Door","A perfect round"],speed:["Speed Demon","Average under 8 seconds"],shield:["Shield Wall","Finished with all 3 shields"]};
+  const topics=TOPIC_KEYS.map(t=>({t,a:A.filter(x=>x.q.t===t)})).filter(x=>x.a.length);
+  const ranked=(S.mode==="quick"||S.mode==="mission")&&A.length===S.queue.length;
+  let board=null; if(ranked){ board=LS.get("scores_"+S.mode,[]); board.push({n:S.name,s:S.score,p:pct,d:new Date().toISOString()}); board.sort((a,b)=>b.s-a.s||b.p-a.p); board=board.slice(0,10); LS.set("scores_"+S.mode,board); }
+  const wrong=A.filter(a=>!a.ok);
+  const dt=new Date().toLocaleString("en-GB",{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+  $("#endBox").innerHTML=`
+  <section class="card resultcard" id="resultCard" aria-label="Results card">
+    <div class="rc-top"><div><div class="rc-unit">${esc(QUIZ.unit)}</div><div class="rc-name" id="rcName"></div><div class="rc-meta">${esc(MODES[S.mode].name)} · ${esc(dt)}</div></div>${rankBadge(rk,72)}</div>
+    <div class="rc-rank" style="color:${rk.col}">${rk.name}</div>
+    <div class="rc-stats"><div><b>${pct}%</b><span>score</span></div><div><b>${right}/${A.length}</b><span>correct</span></div><div><b>${S.score}</b><span>points</span></div><div><b>${S.best}</b><span>best streak</span></div></div>
+    <div class="rc-topics">${topics.map(x=>{const p=pctOf(x.a);return `<div class="rct"><span>${esc(TOPICS[x.t].short)}</span><span class="bar"><i style="width:${p}%;background:${p>=70?"#2ecc71":p>=50?"#ffb020":"#ff5d5d"}"></i></span><b>${p}%</b></div>`;}).join("")}</div>
+    ${S.badges.size?`<div class="rc-badges">${[...S.badges].map(b=>`<span class="bdg">${ICON.star}${BADGES[b][0]}</span>`).join("")}</div>`:""}
+    <div class="rc-foot">Screenshot this card to show your lecturer</div>
+  </section>
+  <p class="rankmsg">${esc(rk.msg)}</p>
+  <div class="row wrap">${wrong.length?`<button type="button" class="btn primary" id="retryBtn">Retry my ${wrong.length} wrong answer${wrong.length>1?"s":""}</button>`:""}
+   <button type="button" class="btn" id="againBtn">Play ${esc(MODES[S.mode].name)} again</button><button type="button" class="btn ghost" id="menuBtn">Change mode</button></div>
+  <section class="card"><h2>Topic breakdown</h2><div class="breakdown">${topics.map(x=>{const p=pctOf(x.a),weak=p<70;return `<div class="bd ${weak?"weak":""}"><div class="bdh"><b>${esc(TOPICS[x.t].name)}</b><span>${x.a.filter(a=>a.ok).length}/${x.a.length} · ${p}%</span></div><div class="bar"><i style="width:${p}%"></i></div>${weak?`<div class="rev">Revise: ${esc(TOPICS[x.t].notes)}</div>`:`<div class="okmsg">Secure</div>`}</div>`;}).join("")}</div></section>
+  <section class="card"><h2>Review ${wrong.length?"your wrong answers":"(all correct!)"}</h2>${wrong.length?wrong.map((a,i)=>`<div class="rv"><div class="rvq"><span class="chip topic">${esc(TOPICS[a.q.t].short)}</span> ${esc(a.q.q)}</div><div class="rvy"><b>Your answer:</b> ${esc(a.given)}</div><div class="rvc"><b>Correct answer:</b> ${esc(a.correct)}</div><div class="rvx">${esc(a.q.x)}</div></div>`).join("") : "<p>"+esc(QUIZ.perfectMsg||"Well done.")+"</p>"}</section>
+  ${board?`<section class="card"><h2>${esc(MODES[S.mode].name)} high scores <small>(this device only)</small></h2>${boardHTML(board)}</section>`:""}`;
+  $("#rcName").textContent=S.name||"Learner"; if(board) fillBoardNames($("#endBox"),board);
+  if(wrong.length) $("#retryBtn").onclick=()=>start("retry",wrong.map(a=>a.q));
+  $("#againBtn").onclick=()=>start(S.mode==="retry"?"practice":S.mode,S.mode==="retry"?"all":S.opt);
+  $("#menuBtn").onclick=home;
+  $("#endH").focus();
+  if(pct>=70) SFX.door();
+}
+function boardHTML(b){ if(!b.length) return "<p class='muted'>No scores yet. Be the first!</p>";
+  return `<ol class="board">${b.map((r,i)=>`<li><span class="pos">${i+1}</span><span class="bn"></span><span class="bs">${r.s} pts</span><span class="bp">${r.p}%</span></li>`).join("")}</ol>`; }
+function fillBoardNames(root,b){ $$(".board .bn",root).forEach((el,i)=>el.textContent=b[i].n); }
+
+/* ---------- home ---------- */
+function home(){ stopTimer(); show("home"); $("#heroDoor").innerHTML=doorSVG("open"); renderBoards(); $("#homeH").focus(); }
+function renderBoards(){ const el=$("#boards"); const q=LS.get("scores_quick",[]), m=LS.get("scores_mission",[]);
+  el.innerHTML=`<div class="boards"><div id="bq"><h3>Quick Fire</h3>${boardHTML(q)}</div><div id="bm"><h3>Full Mission</h3>${boardHTML(m)}</div></div>${q.length||m.length?'<button type="button" class="btn ghost small" id="clearScores">Clear scores on this device</button>':""}`;
+  fillBoardNames($("#bq"),q); fillBoardNames($("#bm"),m);
+  const c=$("#clearScores"); if(c) c.onclick=()=>{ if(c.dataset.confirm){ LS.set("scores_quick",[]);LS.set("scores_mission",[]); renderBoards(); } else { c.dataset.confirm="1"; c.textContent="Tap again to clear all scores"; } };
+}
+function cleanName(v){ return v.replace(/[^A-Za-zÀ-ÿ' -]/g,"").trim().split(/\s+/)[0]?.slice(0,20)||""; }
+function init(){
+  $("#soundBtn").onclick=()=>setSound(!soundOn); setSound(soundOn);
+  const nm=$("#name"); nm.value=LS.get("name","");
+  $("#topicSel").innerHTML=`<option value="all">All topics (${BANK.length} questions)</option>`+TOPIC_KEYS.map(t=>`<option value="${t}">${esc(TOPICS[t].name)} (${BANK.filter(q=>q.t===t).length})</option>`).join("");
+  $$(".startbtn").forEach(b=>b.onclick=()=>{ const n=cleanName(nm.value); if(!n){ $("#nameErr").hidden=false; nm.focus(); return; } $("#nameErr").hidden=true; nm.value=n; LS.set("name",n);
+    playerName=n; const mode=b.dataset.mode; start(mode,mode==="practice"?$("#topicSel").value:null); });
+  nm.addEventListener("input",()=>{$("#nameErr").hidden=true;});
+  $("#quitBtn").onclick=()=>{ const b=$("#quitBtn"); if(b.dataset.confirm){ delete b.dataset.confirm; b.textContent="End"; if(S.answers.length) endGame(); else home(); } else { b.dataset.confirm="1"; b.textContent="Tap again to end"; setTimeout(()=>{delete b.dataset.confirm;b.textContent="End";},3000);} };
+  $("#homeLink").onclick=e=>{e.preventDefault(); home();};
+  document.addEventListener("keydown",e=>{ if(!$("#howto").hidden||$("#play").hidden||!cur||e.target.tagName==="INPUT"||e.target.tagName==="SELECT"||e.ctrlKey||e.metaKey||e.altKey) return;
+    if(cur.answered) return; const k=e.key.toUpperCase();
+    if(cur.q.type==="mc"){ const i="ABCD1234".indexOf(k); if(i>=0){ const b=$$("#qbody .opt")[i%4]; b&&b.click(); } }
+    if(cur.q.type==="tf"){ if(k==="T") $$("#qbody .opt")[0].click(); if(k==="F") $$("#qbody .opt")[1].click(); } });
+  $("#qcount").textContent=BANK.length;
+  let wasRunning=false, lastFocus=null;
+  const openHow=()=>{ lastFocus=document.activeElement; wasRunning=pauseTimer(); $("#howto").hidden=false; $("#howtoH").focus(); };
+  const closeHow=()=>{ $("#howto").hidden=true; LS.set("howto_seen",true); if(wasRunning&&cur&&!cur.answered) runTimer(); wasRunning=false; if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); };
+  $("#helpBtn").onclick=openHow; $("#howtoClose").onclick=closeHow;
+  $("#howto").addEventListener("click",e=>{ if(e.target.id==="howto") closeHow(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!$("#howto").hidden) closeHow(); });
+  $("#howto").addEventListener("keydown",e=>{ if(e.key!=="Tab") return; const f=$$("#howto button, #howto [tabindex='-1']"); const btn=$("#howtoClose"); e.preventDefault(); btn.focus(); });
+  home();
+  if(!LS.get("howto_seen",false)) openHow();
+}
+document.addEventListener("DOMContentLoaded",init);
+window.__quiz={get S(){return S;},BANK,DIAGRAMS,start};
+})();
+</script>
+</body>
+</html>
+
